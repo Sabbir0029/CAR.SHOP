@@ -1,0 +1,41 @@
+.BannerBottom:hover{
+    padding: 8px;
+}
+.navigation{
+   display: flex; 
+}
+.top1{
+    margin: 70px;
+}
+.img2{
+    width: 70px;
+    margin: 10px;
+}
+.img1{
+    width: 70px;
+    margin: 10px;
+}
+.photo{
+    width: 15px;
+}
+.card{
+    box-shadow: 10px 4px 10px 4px rgb(176, 176, 180);
+    margin: 10px;
+    text-align: center;
+  }
+
+.cartop{
+    margin-top: 80px;
+}
+.carimg{
+    display: flex;
+}
+.dashboard{
+    margin-top: 100px;
+}
+.menu{
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(185, 39, 39);
+}
