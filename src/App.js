@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
+import AllProducts from './pages/AllProducts/AllProducts';
 import AdminRoute from './pages/Authentication/AdminRoute/AdminRoute';
 import LoginHome from './pages/Authentication/Login/LoginHome';
 import PrivateRoute from './pages/Authentication/PrivateRoute/PrivateRoute';
 import RegisterdHome from './pages/Authentication/Registerd/RegisterdHome';
 import BookingCar from './pages/BookingCar/BookingCar';
+import ContactUs from './pages/ContactUs/ContactUs';
 import AddProdect from './pages/Dashboard/AddProdect/AddProdect';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
@@ -26,6 +28,12 @@ function App() {
         </Route>
         <Route path='/home'>
           <Home></Home>
+        </Route>
+        <Route path='/ContactUs'>
+          <ContactUs></ContactUs>
+        </Route>
+        <Route path='/AllProducts'>
+          <AllProducts></AllProducts>
         </Route>
         <Route path='/myOrder'>
           <MyOrder></MyOrder>

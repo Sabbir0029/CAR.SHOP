@@ -1,7 +1,12 @@
+import { Elements } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import { Alert, Button, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import {loadStripe} from '@stripe/stripe-js';
+import CheckoutForm from '../MyOrder/CheckoutForm';
 
+
+const stripePromise = loadStripe('pk_test_51Kc1CLKBiV3NBPFsAjtSY7r0CgPhQyPb1DOJTBbTQjTyXMOztFSshkwe9JmF2QKdIDVMPj1qz04JpdDDpefw0ERM00yc3U3fd4');
 const BookingCar = () => {
     const [booking, setBooking] = useState({})
     const {id} = useParams()
@@ -10,7 +15,7 @@ const BookingCar = () => {
     const [bookingSuccessfully, setBookingSuccessfully] = useState(false);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/carlist/${id}`;
+        const url = `https://serene-lake-68929.herokuapp.com/carlist/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setBooking(data))
@@ -29,8 +34,7 @@ const BookingCar = () => {
       name,
       price
     }
-    console.log(bookingPlaces)
-    fetch('http://localhost:5000/booking',{
+    fetch('https://serene-lake-68929.herokuapp.com/booking',{
       method:'POST',
       headers:{
         'content-type':'application/json'
@@ -111,6 +115,11 @@ const BookingCar = () => {
               </Row>
             </Container>
             <h1>{name}</h1>
+            <Elements stripe={stripePromise}>
+              <CheckoutForm 
+              booking={booking}
+               />
+            </Elements>
          </div>
     );
 };

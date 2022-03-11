@@ -12,7 +12,7 @@ const BmwCarListCard = (props) => {
               <Card.Body>
                 <Card.Title className='text-dark fst-italic'>Name : {name}</Card.Title>
                 <Card.Title className='text-dark fst-italic'>price : {price}</Card.Title>
-                <Link to={`booking/${_id}`}><Button className=' mb-3 bg-dark border-dark fw-bold fst-italic'>Booking</Button></Link>
+                <Link to={`booking/${_id}`}><Button className=' mb-3 bg-dark border-dark fw-bold fst-italic'>Buy Now</Button></Link>
               </Card.Body>
             </Card>
           </Col>
